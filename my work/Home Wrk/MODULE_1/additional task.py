@@ -14,3 +14,11 @@ average_grade = {
     students[4]: a_4
 }
 print(average_grade)
+
+grades = [[5, 3, 3, 5, 4], [2, 2, 2, 3], [4, 5, 5, 2], [4, 4, 3], [5, 5, 5, 4, 5]]
+students = {'Johnny', 'Bilbo', 'Steve', 'Khendrik', 'Aaron'}
+# вычисляем средние оценки
+average_grades = list(map(lambda grade: sum(grade) / len(grade), grades))
+# Создаем словарь с использованием zip
+average_grade = dict(zip(sorted(students), average_grades))
+print(average_grade)
