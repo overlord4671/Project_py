@@ -1,17 +1,16 @@
 import sys
 from sys import getsizeof
+import time
 
 sys.set_int_max_str_digits(999999999)
 
-x = 67 ** 77 ** 3
-print(x)
+time_start = time.time()
+x = 15 ** 15 ** 5
 
 num_digits = len(str(x))
 
 print(f"Количество символов в числе x: {num_digits}")
 
-print(getsizeof(x) / (1024 ** 2))
-
-import cProfile
-
-cProfile.run('print(x)')
+print(f"Размер числа x: {getsizeof(x) / (1024 ** 2):.2f} мегабайт")
+time_end = time.time()
+print(f"Время выполнения программы: {time_end - time_start:.2f} секунд")

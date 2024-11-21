@@ -2,6 +2,7 @@ import tkinter as tk
 from PIL import Image, ImageDraw, ImageTk, ImageFilter
 import random
 
+
 class AnimatedGif:
     def __init__(self, root, width=1000, height=800):
         # Инициализация основных параметров
@@ -26,14 +27,14 @@ class AnimatedGif:
             self.bg_color = "white" if self.bg_color == "black" else "black"
             self.canvas.configure(bg=self.bg_color)
             self.update_squares()
-        self.root.after(120, self.switch_bg)  # Менять цвет каждые 120 миллисекунд
+        self.root.after(110, self.switch_bg)  # Менять цвет каждые 120 миллисекунд
 
     def update_squares(self):
         # Обновление квадратов на холсте
         self.canvas.delete("square")  # Удаление старых квадратов
         self.square_info = []  # Сброс информации о квадратах
         self.square_images = []  # Сброс списка изображений квадратов
-        num_squares = random.randint(4, 9)  # Случайное количество квадратов
+        num_squares = random.randint(5, 9)  # Случайное количество квадратов
         for _ in range(num_squares):  # Рисование квадратов
             size = random.randint(50, 100)  # Случайный размер квадрата от 50 до 100
             x1, y1, x2, y2 = self.get_non_overlapping_position(size)
@@ -75,8 +76,10 @@ class AnimatedGif:
     def start_animation(self, event):
         # Функция возобновления анимации при отпускании кнопки мыши
         self.animation_running = True
+
+
 if __name__ == "__main__":
-     # Запуск приложения
+    # Запуск приложения
     root = tk.Tk()
     app = AnimatedGif(root)
     root.mainloop()
