@@ -5,7 +5,7 @@ import time
 sys.set_int_max_str_digits(999999999)
 
 time_start = time.time()
-x = 15 ** 15 ** 5
+x = 2 ** 93999
 
 num_digits = len(str(x))
 
